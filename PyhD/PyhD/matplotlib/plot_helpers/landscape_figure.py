@@ -10,6 +10,8 @@ def landscape_fig(
     title=None,
     x_arrs=None,
     y_arrs=None,
+    linestyle_arrs=None,
+    markerstyle_arrs=None,
     label_arrs=None,
     legend=False,
     legend_title=None,
@@ -27,8 +29,18 @@ def landscape_fig(
     if x_arrs is not None:
         if label_arrs is None:
             label_arrs = np.full(len(x_arrs), "")
+        if linestyle_arrs is None:
+            linestyle_arrs = np.full(len(x_arrs), "-")
+        if markerstyle_arrs is None:
+            markerstyle_arrs = np.full(len(x_arrs), "")
         for ind, _ in enumerate(x_arrs):
-            axs.plot(x_arrs[ind], y_arrs[ind], label=label_arrs[ind])
+            axs.plot(
+                x_arrs[ind],
+                y_arrs[ind],
+                label=label_arrs[ind],
+                linestyle=linestyle_arrs[ind],
+                marker=markerstyle_arrs[ind],
+            )
 
     if legend:
         axs.legend(title=legend_title)
