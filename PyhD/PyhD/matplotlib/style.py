@@ -18,7 +18,7 @@ def apply_style():
             "axes.grid": True,  # Enable grid
             "grid.alpha": 0.5,  # Grid transparency
             "grid.linestyle": "--",  # Grid line style
-            "savefig.dpi": 600,  # High-quality figures
+            "savefig.dpi": 300,  # High-quality figures
             "mathtext.fontset": "cm",
         }
     )
@@ -26,7 +26,7 @@ def apply_style():
     default_cycler = (
         cycler(color=["black", "red", "blue", "green", "orange", "purple"])
         + cycler(linestyle=["-", "-", "-", "-", "-", "-"])
-        + cycler(alpha=[0.7, 0.7, 0.7, 0.7, 0.7, 0.7])
+        + cycler(alpha=[0.6, 0.6, 0.6, 0.6, 0.6, 0.6])
     )
     plt.rc("axes", prop_cycle=default_cycler)
 
