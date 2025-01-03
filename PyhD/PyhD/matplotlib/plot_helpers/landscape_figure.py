@@ -17,9 +17,11 @@ def landscape_fig(
     legend_title=None,
     tight_layout=False,
     suptitle=None,
+    dpi=None,
 ):
     apply_style()
-    figure = plt.figure(figsize=(6, 4), num=fig_name)
+  
+    figure = plt.figure(figsize=(6, 4), num=fig_name, dpi=dpi)
     axs = figure.gca()
 
     axs.set_title(title)
