@@ -18,6 +18,7 @@ def landscape_fig(
     tight_layout=False,
     suptitle=None,
     dpi=None,
+    linewidth=None,
 ):
     apply_style()
   
@@ -42,6 +43,7 @@ def landscape_fig(
                 label=label_arrs[ind],
                 linestyle=linestyle_arrs[ind],
                 marker=markerstyle_arrs[ind],
+                linewidth=linewidth,
             )
 
     if legend:
