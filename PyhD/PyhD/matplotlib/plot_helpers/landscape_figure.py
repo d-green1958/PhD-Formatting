@@ -19,6 +19,7 @@ def landscape_fig(
     suptitle=None,
     dpi=None,
     linewidth=None,
+    color_arrs=None,
 ):
     apply_style()
   
@@ -36,6 +37,9 @@ def landscape_fig(
             linestyle_arrs = np.full(len(x_arrs), "-")
         if markerstyle_arrs is None:
             markerstyle_arrs = np.full(len(x_arrs), "")
+        if color_arrs is None:
+            color_arrs = np.full(len(x_arrs), "")
+            
         for ind, _ in enumerate(x_arrs):
             axs.plot(
                 x_arrs[ind],
@@ -44,6 +48,7 @@ def landscape_fig(
                 linestyle=linestyle_arrs[ind],
                 marker=markerstyle_arrs[ind],
                 linewidth=linewidth,
+                color=color_arrs[ind]
             )
 
     if legend:
