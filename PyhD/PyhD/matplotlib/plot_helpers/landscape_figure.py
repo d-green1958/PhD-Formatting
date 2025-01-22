@@ -37,19 +37,30 @@ def landscape_fig(
             linestyle_arrs = np.full(len(x_arrs), "-")
         if markerstyle_arrs is None:
             markerstyle_arrs = np.full(len(x_arrs), "")
-        if color_arrs is None:
-            color_arrs = np.full(len(x_arrs), "")
+        if color_arrs is not None:
+            colors_defined = True
+        
             
         for ind, _ in enumerate(x_arrs):
-            axs.plot(
-                x_arrs[ind],
-                y_arrs[ind],
-                label=label_arrs[ind],
-                linestyle=linestyle_arrs[ind],
-                marker=markerstyle_arrs[ind],
-                linewidth=linewidth,
-                color=color_arrs[ind]
-            )
+            if colors_defined:
+                axs.plot(
+                    x_arrs[ind],
+                    y_arrs[ind],
+                    label=label_arrs[ind],
+                    linestyle=linestyle_arrs[ind],
+                    marker=markerstyle_arrs[ind],
+                    linewidth=linewidth,
+                    color=color_arrs[ind],
+                )
+            else:
+                axs.plot(
+                    x_arrs[ind],
+                    y_arrs[ind],
+                    label=label_arrs[ind],
+                    linestyle=linestyle_arrs[ind],
+                    marker=markerstyle_arrs[ind],
+                    linewidth=linewidth,
+                )
 
     if legend:
         axs.legend(title=legend_title)
