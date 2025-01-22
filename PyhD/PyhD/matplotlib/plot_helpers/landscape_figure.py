@@ -13,6 +13,7 @@ def landscape_fig(
     linestyle_arrs=None,
     markerstyle_arrs=None,
     label_arrs=None,
+    legend_handles=None,
     legend=False,
     legend_title=None,
     tight_layout=False,
@@ -66,7 +67,11 @@ def landscape_fig(
                 )
 
     if legend:
-        axs.legend(title=legend_title)
+        if legend_handles == None:
+            axs.legend(title=legend_title)
+        else:
+            axs.legend(handles=legend_handles, title=legend_title)
+
 
     figure.suptitle(suptitle)
     if tight_layout:
