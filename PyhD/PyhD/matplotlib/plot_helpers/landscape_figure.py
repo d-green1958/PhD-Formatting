@@ -29,6 +29,8 @@ def landscape_fig(
     axs.set_title(title)
     axs.set_xlabel(x_label)
     axs.set_ylabel(y_label)
+    
+    colors_defined=False
 
     if x_arrs is not None:
         if label_arrs is None:
@@ -37,6 +39,7 @@ def landscape_fig(
             linestyle_arrs = np.full(len(x_arrs), "-")
         if markerstyle_arrs is None:
             markerstyle_arrs = np.full(len(x_arrs), "")
+        
         if color_arrs is not None:
             colors_defined = True
         
